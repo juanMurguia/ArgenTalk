@@ -58,9 +58,9 @@ const ContainerTranslate = () => {
 
            
         setRespuesta(nuevoContenido)
-        console.log('Texto ingresado:', textoInput);
-        console.log(nuevoContenido);
-        console.log(respuesta)
+        //console.log('Texto ingresado:', textoInput);
+        //console.log(nuevoContenido);
+        //console.log(respuesta)
       }
 
       const copiarTexto = () => {
@@ -92,7 +92,18 @@ const ContainerTranslate = () => {
                 </label>
             </form>
 
-        
+            <button  disabled={cargando} onChange={handleChange} onClick={runChat} className="relative w-1/2 mx-auto md:hidden drop-shadow-lg rounded-full
+
+px-8 py-2 text-slate-100 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300 font-semibold" type="submit" value="Submit" > 
+
+{cargando && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-white"></div>
+        </div>
+      )}
+      {cargando ? 'Traduciendo...' : 'Argentinizar'}
+</button>
+
           <div id="respuesta" className="relative w-full h-full text-2xl text-slate-100 text-left p-8 bg-slate-800 rounded-md border border-slate-500
           ">
             <button onClick={copiarTexto} className="copy-button absolute right-0 top-0 p-4 opacity-40 hover:opacity-60"> <FontAwesomeIcon icon={faCopy} /> </button>
@@ -103,7 +114,7 @@ const ContainerTranslate = () => {
 
         </div>
 
-        <button  disabled={cargando} onChange={handleChange} onClick={runChat} className=" drop-shadow-lg rounded-full
+        <button  disabled={cargando} onChange={handleChange} onClick={runChat} className="hidden md:flex drop-shadow-lg rounded-full
 
 px-8 py-2 text-slate-100 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300 font-semibold" type="submit" value="Submit" > 
 

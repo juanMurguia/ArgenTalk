@@ -29,7 +29,7 @@ const Header = () => {
 
         {/* Logo */}
         <h1 className="text-white text-xl font-bold pointer-events-none">
-          <span className='text-cyan-300'>Argen</span>Talk
+          <span className='text-cyan-300'>Che</span>Talk
         </h1>
 
         {/* Mobile Menu*/}
