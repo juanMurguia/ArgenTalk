@@ -42,7 +42,7 @@ const Header = () => {
         {/* Desktop Menu */}
         <nav className="hidden lg:flex space-x-4 gap-12">
           <li className="group block list-none w-auto px-6 hover:text-cyan-200" onMouseEnter={() => setShowContact(true)} onMouseLeave={() => setShowContact(false)}>
-            <a href="#" className="block text-white text-xl md:text-base py-2 flex justify-between items-center ">Contacto  <span class="arrow-down"></span></a>
+            <a href="#" className="text-white text-xl md:text-base py-2 flex justify-between items-center ">Contacto  <span class="arrow-down"></span></a>
             {showContact && (
             <div className="absolute drop-shadow-xl rounded-md mr-12 z-40  bg-slate-900 p-8 flex flex-row align-middle justify-items-center items-center gap-6">
                 <ul className="flex gap-8">
