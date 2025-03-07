@@ -16,13 +16,12 @@ const Header = () => {
 
   const toggleDonations = () => {
     setShowDonations(!showDonations);
-  }
+  };
 
   const toggleContacts = () => {
     setShowContact(!showContact);
-  }
+  };
   
-
   return (
     <header className="bg-slate-900 px-4 py-4 md:px-8 md:py-4 w-full">
       <div className="container mx-auto flex items-center justify-between">
@@ -42,17 +41,18 @@ const Header = () => {
         {/* Desktop Menu */}
         <nav className="hidden lg:flex space-x-4 gap-12">
           <li className="group block list-none w-auto px-6 hover:text-cyan-200" onMouseEnter={() => setShowContact(true)} onMouseLeave={() => setShowContact(false)}>
-            <a href="#" className="text-white text-xl md:text-base py-2 flex justify-between items-center ">Contacto  <span class="arrow-down"></span></a>
+            {/* Fixed: Changed empty href to button */}
+            <button className="text-white text-xl md:text-base py-2 flex justify-between items-center">Contacto  <span className="arrow-down"></span></button>
             {showContact && (
             <div className="absolute drop-shadow-xl rounded-md mr-12 z-40  bg-slate-900 p-8 flex flex-row align-middle justify-items-center items-center gap-6">
                 <ul className="flex gap-8">
                   <li>
-                    <a href="https://www.instagram.com/juanmurguiaa/" target="_blank" rel="noopener noreferrer" className="text-white text-2xl hover:text-cyan-500">
+                    <a href="https://www.instagram.com/juanmurguiaa/" target="_blank" rel="noreferrer" className="text-white text-2xl hover:text-cyan-500">
                       <FontAwesomeIcon icon={['fab', 'instagram']} /> 
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/juan-cruz-murguia/" target="_blank" rel="noopener noreferrer" className="text-white text-2xl hover:text-cyan-500">
+                    <a href="https://www.linkedin.com/in/juan-cruz-murguia/" target="_blank" rel="noreferrer" className="text-white text-2xl hover:text-cyan-500">
                       <FontAwesomeIcon icon={['fab', 'linkedin']} />
                     </a>
                   </li>
@@ -61,10 +61,9 @@ const Header = () => {
             )}
           </li>
           
-
-         
-          <li className="group block list-none w-auto px-6"  onMouseEnter={() => setShowDonations(true)} onMouseLeave={() => setShowDonations(false)}> 
-           <a href="#" className="text-white text-xl md:text-base py-2 flex justify-between items-center">Apoya este proyecto <span class="arrow-down"></span></a>
+          <li className="group block list-none w-auto px-6" onMouseEnter={() => setShowDonations(true)} onMouseLeave={() => setShowDonations(false)}> 
+           {/* Fixed: Changed # href to button */}
+           <button className="text-white text-xl md:text-base py-2 flex justify-between items-center">Apoya este proyecto <span className="arrow-down"></span></button>
            {showDonations && (
         <div className="absolute drop-shadow-xl rounded-md mr-12 z-40  bg-slate-900 p-8 flex flex-col align-middle justify-items-center items-center gap-6">
           <div id="paypal">
@@ -83,7 +82,7 @@ const Header = () => {
           </div>
 
           <div id="cafecito">
-            <a href='https://cafecito.app/juanmurguia' rel='noopener' target='_blank'>
+            <a href='https://cafecito.app/juanmurguia' rel="noreferrer" target='_blank'>
               <img
                 srcSet='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x'
                 src='https://cdn.cafecito.app/imgs/buttons/button_6.png'
@@ -94,45 +93,64 @@ const Header = () => {
         </div>
       )}
           </li>
-          
         </nav>
       </div>
 
       {/* Mobile Menu */}
       <div className={`lg:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} bg-slate-900 pt-5 p-2 transition-transform`}>
-        <a href="#" onClick={toggleContacts} className="block text-white text-xl py-2 flex justify-between items-center bg-slate-900 ">Contacto  <span class="arrow-down"></span></a>
+        {/* Fixed: Changed # href to button */}
+        <button onClick={toggleContacts} className=" w-full text-left text-white text-xl py-2 flex justify-between items-center bg-slate-900">
+          Contacto <span className="arrow-down"></span>
+        </button>
+        
         <div className={`lg:hidden ${showContact ? 'block' : 'hidden'} py-4 flex flex-col align-middle justify-items-center items-center gap-6`}>
-        <ul className="flex gap-24">
-                  <li>
-                    <a href="https://www.instagram.com/juanmurguiaa/" target="_blank" rel="noopener noreferrer" className="text-white text-2xl hover:text-cyan-500">
-                      <FontAwesomeIcon icon={['fab', 'instagram']} /> 
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/juan-cruz-murguia/" target="_blank" rel="noopener noreferrer" className="text-white text-2xl hover:text-cyan-500">
-                      <FontAwesomeIcon icon={['fab', 'linkedin']} />
-                    </a>
-                  </li>
-                </ul>
+          <ul className="flex gap-24">
+            <li>
+              <a href="https://www.instagram.com/juanmurguiaa/" target="_blank" rel="noreferrer" className="text-white text-2xl hover:text-cyan-500">
+                <FontAwesomeIcon icon={['fab', 'instagram']} /> 
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/juan-cruz-murguia/" target="_blank" rel="noreferrer" className="text-white text-2xl hover:text-cyan-500">
+                <FontAwesomeIcon icon={['fab', 'linkedin']} />
+              </a>
+            </li>
+          </ul>
         </div>
+        
         <hr className="border-slate-600" />
-        <a href="#" onClick={toggleDonations} className="block text-white text-xl py-2 flex justify-between items-center">Apoya este proyecto <span class="arrow-down"></span></a>
+        
+        {/* Fixed: Changed # href to button */}
+        <button onClick={toggleDonations} className=" w-full text-left text-white text-xl py-2 flex justify-between items-center">
+          Apoya este proyecto <span className="arrow-down"></span>
+        </button>
 
-      
         <div className={`lg:hidden ${showDonations ? 'block' : 'hidden'} bg-slate-900 py-4 flex flex-col align-middle justify-items-center items-center gap-6`}>
+          <div id="paypal">
+            <form action="https://www.paypal.com/donate" method="post" target="_top">
+              <input type="hidden" name="hosted_button_id" value="9R5SJCP3YGH8W" />
+              <input 
+                type="image" 
+                src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" 
+                border="0" 
+                name="submit" 
+                title="PayPal - The safer, easier way to pay online!" 
+                alt="Donate with PayPal button" 
+              />
+              <img alt="Donate with PayPal button" border="0" src="https://www.paypal.com/en_AR/i/scr/pixel.gif" width="1" height="1" />
+            </form>
+          </div>
 
-            <div id="paypal">
-              <form action="https://www.paypal.com/donate" method="post" target="_top">
-                <input type="hidden" name="hosted_button_id" value="9R5SJCP3YGH8W" />
-                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                <img alt="Donate with PayPal button" border="0" src="https://www.paypal.com/en_AR/i/scr/pixel.gif" width="1" height="1" />
-             </form>
-            </div>
-
-            <div id="cafecito">
-            <a href='https://cafecito.app/juanmurguia' rel='noopener' target='_blank'><img srcSet='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_6.png' alt='Invitame un café en cafecito.app' /></a>
-            </div>
-           
+          <div id="cafecito">
+            {/* Fixed: Changed rel='noopener' to rel="noreferrer" */}
+            <a href='https://cafecito.app/juanmurguia' rel="noreferrer" target='_blank'>
+              <img 
+                srcSet='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x' 
+                src='https://cdn.cafecito.app/imgs/buttons/button_6.png' 
+                alt='Invitame un café en cafecito.app' 
+              />
+            </a>
+          </div>
         </div>
       </div>
     </header>

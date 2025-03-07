@@ -81,7 +81,7 @@ const ContainerTranslate = () => {
             <form onSubmit={runChat} className='w-full h-full'>
                 <label className='text-gray-400'>
                 
-                <textarea value={textoInput} placeholder='Ingresá tu texto acá' onChange={handleChange} type="text" className="bg-slate-800 text-slate-100 mt-1 block w-full p-8 border border-slate-500 rounded-md text-2xl placeholder-slate-400
+                <textarea value={textoInput} placeholder='Ingresá tu texto acá' onChange={handleChange} type="text" className="bg-slate-800 text-slate-100 mt-1 block  p-8 border border-slate-500 text-2xl placeholder-slate-400
             focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
             disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
             invalid:border-pink-500 invalid:text-pink-600
