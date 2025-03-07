@@ -14,14 +14,16 @@
     "@testing-library/user-event": "^13.5.0",
     "animate.css": "^4.1.1",
     "clipboard-copy": "^4.0.1",
-    "openai": "^4.24.1",
+    "openai": "^4.86.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-redux": "^9.0.4",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

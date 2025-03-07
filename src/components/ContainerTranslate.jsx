@@ -6,8 +6,8 @@ import clipboardCopy from 'clipboard-copy';
 import 'animate.css/animate.css';
 
 
-const genAI = new GoogleGenerativeAI('AIzaSyBX0vgXYU6kJ_zxt7sSK1Lq9nXr4kpHrNs');
-
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 
 const ContainerTranslate = () => {
@@ -39,8 +39,6 @@ const ContainerTranslate = () => {
 
     async function runChat(e) {
         e.preventDefault();
-        const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-      
         const prompt = `Convierte el siguiente texto a un tono coloquial argentino asegurándote de que la traducción tenga una longitud aproximada a la del texto original:
         Por ejemplo, si el texto original es "Hola, ¿cómo estás?", la traducción podría ser "¿Qué onda, cómo venís?"
         
